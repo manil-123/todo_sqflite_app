@@ -5,8 +5,8 @@ import 'package:path_provider/path_provider.dart';
 import 'package:todo_sqflite_app/models/note.dart';
 
 class DatabaseHelper {
-  static late DatabaseHelper _databaseHelper; // Singleton DatabaseHelper
-  static late Database _database; // Singleton Database
+  static DatabaseHelper? _databaseHelper; // Singleton DatabaseHelper
+  static Database? _database; // Singleton Database
 
   String noteTable = 'note_table';
   String colId = 'id';
@@ -22,14 +22,14 @@ class DatabaseHelper {
       _databaseHelper = DatabaseHelper
           ._createInstance(); // This is executed only once, singleton object
     }
-    return _databaseHelper;
+    return _databaseHelper!;
   }
 
   Future<Database> get database async {
     if (_database == null) {
       _database = await initializeDatabase();
     }
-    return _database;
+    return _database!;
   }
 
   Future<Database> initializeDatabase() async {
