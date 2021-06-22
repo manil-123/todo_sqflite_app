@@ -1,9 +1,9 @@
 class Note {
-  int _id;
-  String _title;
-  String _description;
-  String _date;
-  int _priority;
+  late int _id;
+  late String _title;
+  late String? _description;
+  late String _date;
+  late int _priority;
 
   Note(this._title, this._date, this._priority, [this._description]);
 
@@ -13,8 +13,6 @@ class Note {
   int get id => _id;
 
   String get title => _title;
-
-  String get description => _description;
 
   int get priority => _priority;
 
