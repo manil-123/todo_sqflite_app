@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_sqflite_app/screens/todo_list_screen.dart';
+import 'package:todo_sqflite_app/screens/note_list.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: TodoListScreen(),
+      home: NoteList(),
     );
   }
 }
